@@ -4,7 +4,19 @@ int number = Convert.ToInt32(Console.ReadLine());
 int squad = Convert.ToInt32(Console.ReadLine());
 if ( squad == number*number||number == squad*squad )
 {
-   Console.WriteLine("Correct "); 
+   Console.WriteLine("Correct!");
+   if(squad>=number)
+   {
+      Console.Write(squad);
+      Console.Write(" is squad of ");
+      Console.WriteLine(number);
+   } 
+   else
+   {
+      Console.Write(number);
+      Console.Write(" is squad of ");
+      Console.WriteLine(squad);
+   }
 }
 else
 {
