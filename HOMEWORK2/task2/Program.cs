@@ -1,12 +1,17 @@
 ﻿Console.Write("Input Your Number: ");
-int num = int.Parse(Console.ReadLine());
-if(Math.Abs(num)<100)
-Console.WriteLine("The Third Digit of Number is Missing!");
-else
+int num = Convert.ToInt32(Console.ReadLine());
+thirdigit(num);
+void thirdigit(int n)
 {
-    while(Math.Abs(num)/100>9)
+    n = Math.Abs(n);
+    if (n < 100)
+        Console.WriteLine($"The Third Digit of {num} is Missing!");
+    else
     {
-        num = num/10;
+        while (n / 100 > 9)
+        {
+            n = n / 10;
+        }
+        Console.WriteLine($"The Third Digit of {num} is {n % 10}");
     }
-    Console.WriteLine($"The Third Digit of Number is {Math.Abs(num%10)}!!!"); 
 }
