@@ -14,10 +14,10 @@ string weekwork(int n)
     {
         case 6:
         case 7:
-            answer = "Weekend Day!!!";
+            answer = "Weekend!!!";
             break;
         default:
-            answer = "Regular Workday..";
+            answer = "Workday..";
             break;
     }
     return answer;
