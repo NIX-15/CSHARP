@@ -4,7 +4,7 @@ void fillarray(int[] arr)
     int ind = 0;
     while (ind < arr.Length)
     {
-        arr[ind] = new Random().Next(0, 100);
+        arr[ind] = new Random().Next(-99, 100);
         ind++;
     }
 }
