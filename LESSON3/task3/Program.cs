@@ -10,15 +10,16 @@ void fillarray(int[] arr)
 }
 void arrsort(int[] arr)
 {
-    int min = arr[0];
     for (int i = 0; i < arr.Length; i++)
     {
         for (int t = i; t < arr.Length; t++)
         {
-            min = arr[i];
-            if (arr[t] < min)
-                min = arr[t];
-            arr[i] = arr[t];
+            if (arr[t] < arr[i])
+            {
+                int min = arr[t];
+                arr[t] = arr[i];
+                arr[i] = min;
+            }
         }
     }
 }
@@ -32,5 +33,3 @@ fillarray(array);
 showarr(array);
 arrsort(array);
 showarr(array);
-
-//in progress
