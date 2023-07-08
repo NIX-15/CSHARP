@@ -17,5 +17,5 @@ string replace(string s, char oldf, char newbe)
     return result;
 }
 
-string type = replace(text, ' ', '_');
+string type = replace(text, 'r', 'R');
 Console.WriteLine(type);
