@@ -7,3 +7,5 @@ void reverse(string apo)
     Console.WriteLine();
 }
 reverse(apozh);
+//Kortezhi zameni (arr[i],arr[i+1]) = (arr[0],arr[1])
+//mozhno bez vremennih peremennih temp menyat pary
