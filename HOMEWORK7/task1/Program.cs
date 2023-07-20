@@ -1,5 +1,4 @@
-﻿
-void displaymat(double[,] mat)
+﻿void displaymat(double[,] mat)
 {
     for (int i = 0; i < mat.GetLength(0); i++)
     {
@@ -7,12 +6,9 @@ void displaymat(double[,] mat)
         {
             Console.Write($"{Math.Round(mat[i, j],2)}  ");
         }
-        Console.WriteLine();
-        Console.WriteLine();
+        Console.WriteLine(); Console.WriteLine();
     }
 }
-
-
 double[,] matinit()
 {
     double[,] mat = new double[new Random().Next(1, 11), new Random().Next(1, 11)];
