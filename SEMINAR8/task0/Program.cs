@@ -10,17 +10,6 @@
     }
     return matrix;
 }
-/*void displayMat(int[,] mat)
-{
-    for (int i = 0; i < mat.GetLength(0); i++)
-    {
-        for (int j = 0; j < mat.GetLength(1); j++)
-        {
-            Console.Write($"{mat[i, j]} ");
-        }
-        Console.WriteLine();
-    }
-}*/
 void rowswap(int[,] mat)
 {
     for (int i = 0; i < mat.GetLength(0); i++)
@@ -31,8 +20,10 @@ void rowswap(int[,] mat)
         }
         Console.WriteLine();
     }
+    Console.WriteLine();
+
     for (int i = 0; i < mat.GetLength(1); i++)
-        (mat[0, i], mat[mat.GetLength(0), i]) = (mat[mat.GetLength(0), i], mat[0, i]);
+        (mat[0, i], mat[mat.GetLength(0)-1, i]) = (mat[mat.GetLength(0)-1, i], mat[0, i]);
 
     for (int i = 0; i < mat.GetLength(0); i++)
     {
@@ -42,7 +33,6 @@ void rowswap(int[,] mat)
         }
         Console.WriteLine();
     }
+    Console.WriteLine();
 }
-
-//displayMat(matinit());
-rowswap(matinit());//in progress
+rowswap(matinit());
