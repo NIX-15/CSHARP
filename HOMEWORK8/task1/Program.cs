@@ -1,4 +1,4 @@
-﻿int[,] matrix = new int[new Random().Next(2, 7), new Random().Next(2, 7)];
+int[,] matrix = new int[new Random().Next(2, 7), new Random().Next(2, 7)];
 void matfill()
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
