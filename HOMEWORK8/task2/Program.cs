@@ -19,7 +19,19 @@ int[] sumCollect(int[,] mat)
 }
 void showLowestSum(int[,] mat, int[] sumtable)
 {
-    //
+    int imin = 0;
+    for (int t = 0; t < sumtable.Length; t++)
+    {
+        if (sumtable[t] < sumtable[imin])
+            imin = t;
+    }
+    Console.WriteLine(
+        $"The row with the minimun sum of elements is #{imin + 1} ({sumtable[imin]}):"
+    );
+    for (int j = 0; j < mat.GetLength(1); j++)
+    {
+        Console.Write($"{mat[imin, j]} ");
+    }
 }
 void displayMat(int[,] mat)
 {
@@ -32,3 +44,8 @@ void displayMat(int[,] mat)
         Console.WriteLine();
     }
 }
+matfill(matrix);
+displayMat(matrix);
+Console.WriteLine();
+showLowestSum(matrix, sumCollect(matrix));
+Console.WriteLine();
