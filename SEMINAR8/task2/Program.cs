@@ -18,26 +18,22 @@ int[] datalist(int[,] mat)
     {
         for (int j = 1; j < mat.GetLength(1); j++)
         {
-            for (int t = 0; t < mat.GetLength(0); t++)
+            for (int t = 0; t < arrData.Length; t++)
             {
-                for (int k = 0; k < mat.GetLength(1); k++)
+                if (arrData[t] == mat[i,j])
                 {
-                    if (mat[i, j] == mat[t, k] && i != t && j != k)
-                    Console.WriteLine($"Number {mat[t,k]} has already added to the array!");
-                    break;
+                    Console.WriteLine($"Number {mat[i, j]} has already added to the array!");
+                }
+                else
+                {
+                  Console.WriteLine($"Number {mat[i, j]} is unique!");  
+                }
+                if (t == arrData.Length - 1 && mat[i, j] != arrData[t])
+                {
+                    Array.Resize(ref arrData, arrData.Length + 1);
+                    arrData[arrData.Length - 1] = mat[i, j];
                 }
             }
-        
-            /*for (int t = 0; t < arrData.Length; t++)
-            {
-                if (mat[i, j] == arrData[t])
-                {
-                    Console.WriteLine("Number has already added to the array!");
-                    break;
-                }
-            }*/
-            Array.Resize(ref arrData, arrData.Length + 1);
-            arrData[arrData.Length - 1] = mat[i, j];
         }
     }
     return arrData;
@@ -61,4 +57,4 @@ void displayArr(int[] arr)
 }
 matfill();
 displayMat(matrix);
-displayArr(datalist(matrix));//in progress
+displayArr(datalist(matrix));
