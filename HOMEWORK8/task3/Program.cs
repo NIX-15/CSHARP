@@ -1,4 +1,4 @@
-﻿int size = 2;
+﻿int size = 4;
 int[,] matrixA = new int[size, size];
 int[,] matrixB = new int[size, size];
 
@@ -7,7 +7,7 @@ void matfill(int[,] mat)
     for (int i = 0; i < mat.GetLength(0); i++)
     {
         for (int j = 0; j < mat.GetLength(1); j++)
-            mat[i, j] = new Random().Next(-99, 100);
+            mat[i, j] = new Random().Next(-9, 10);
     }
 }
 int[,] multiMat(int[,] matA, int[,] matB)
