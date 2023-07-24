@@ -17,7 +17,7 @@ int[,] multiMat(int[,] matA, int[,] matB)
     {
         for (int j = 0; j < size; j++)
         {
-            for (int t = j; t < size; t++)
+            for (int t = 0; t < size; t++)
                 matC[i, j] += matA[i, t] * matB[t, j];
         }
     }
