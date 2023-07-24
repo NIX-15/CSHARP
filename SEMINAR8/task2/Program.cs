@@ -16,23 +16,6 @@ int[] datalist(int[,] mat)
     {
         for (int j = 0; j < mat.GetLength(1); j++)
         {
-<<<<<<< HEAD
-            for (int t = 0; t < arrData.Length; t++)
-            {
-                if (arrData[t] == mat[i,j])
-                {
-                    Console.WriteLine($"Number {mat[i, j]} has already added to the array!");
-                }
-                else
-                {
-                  Console.WriteLine($"Number {mat[i, j]} is unique!");  
-                }
-                if (t == arrData.Length - 1 && mat[i, j] != arrData[t])
-                {
-                    Array.Resize(ref arrData, arrData.Length + 1);
-                    arrData[arrData.Length - 1] = mat[i, j];
-                }
-=======
             int t = 0;
             while (true)
             {
@@ -40,7 +23,7 @@ int[] datalist(int[,] mat)
                 {
                     if (t == 0)
                         break;
-                //Console.WriteLine($"Number {mat[i, j]} has already added to the array!");
+                    //Console.WriteLine($"Number {mat[i, j]} has already added to the array!");
                     break;
                 }
                 if (mat[i, j] != arrData[t] && t == arrData.Length - 1)
@@ -50,7 +33,6 @@ int[] datalist(int[,] mat)
                     break;
                 }
                 t++;
->>>>>>> e3db0d958d61819935aca4e8d85fa16d6d0a9fbc
             }
         }
     }
@@ -88,8 +70,4 @@ int[,] resultTable(int[,] mat, int[] arr)
 }
 matfill();
 displayMat(matrix);
-<<<<<<< HEAD
-displayArr(datalist(matrix));
-=======
 displayMat(resultTable(matrix, datalist(matrix)));
->>>>>>> e3db0d958d61819935aca4e8d85fa16d6d0a9fbc
