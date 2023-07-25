@@ -7,14 +7,9 @@
 int recurNum(int n1, int n2)
 {
     if (n1 == n2)
-    {
         return n1;
-    }
-    else
-    {
-        Console.Write($"{n1}, ");
-        return recurNum(n1 + 1, n2);
-    }
+    Console.Write($"{n1}, ");
+    return recurNum(n1 + 1, n2);
 }
 Console.Write("M-N: ");
-Console.WriteLine(recurNum(-6, 1));
+Console.WriteLine(recurNum(-6, 7));
