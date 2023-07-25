@@ -25,12 +25,32 @@ int[,] matrixReduction(int[,] mat)
     }
     Console.WriteLine($"Min.Element = {mat[imin, jmin]}, row = {imin + 1}, column = {jmin + 1}");
     Console.WriteLine();
-    for (int i = 0; i < matred.GetLength(0); i++)
+    int ii = 0;
+    int jj = 0;
+    for (int i = 0; i < mat.GetLength(0); i++)
     {
-        for (int j = 0; j < matred.GetLength(1); j++)
+        for (int j = 0; j < mat.GetLength(1); j++)
         {
-            if (i != imin && j != jmin)
-                matred[i, j] = mat[i, j];
+            if (i == imin || j == imin) { }
+            else
+            {
+                if (ii == matred.GetLength(0) - 1 && jj == matred.GetLength(1) - 1)
+                {
+                    matred[ii, jj] = mat[i, j];
+                    break;
+                }
+                else if (ii != matred.GetLength(0) - 1 && jj == matred.GetLength(1) - 1)
+                {
+                    matred[ii, jj] = mat[i, j];
+                    ii++;
+                    jj = 0;
+                }
+                else
+                {
+                    matred[ii, jj] = mat[i, j];
+                    jj++;
+                }
+            }
         }
     }
     return matred;
