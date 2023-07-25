@@ -37,6 +37,7 @@ int[,] matrixReduction(int[,] mat)
                 if (ii == matred.GetLength(0) - 1 && jj == matred.GetLength(1) - 1)
                 {
                     matred[ii, jj] = mat[i, j];
+                    Console.WriteLine("REDUCED MATRIX:");
                     break;
                 }
                 else if (ii != matred.GetLength(0) - 1 && jj == matred.GetLength(1) - 1)
