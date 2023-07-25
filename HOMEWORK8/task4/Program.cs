@@ -31,7 +31,7 @@ int[,] matrixReduction(int[,] mat)
     {
         for (int j = 0; j < mat.GetLength(1); j++)
         {
-            if (i == imin || j == imin) { }
+            if (i == imin || j == jmin) { }
             else
             {
                 if (ii == matred.GetLength(0) - 1 && jj == matred.GetLength(1) - 1)
