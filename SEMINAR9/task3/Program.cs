@@ -4,7 +4,7 @@
 
 int num = -99;
 
-int recurSum(int n) //in progress
+int recurSum(int n)
 {
     if (Math.Abs(n) < 10)
         return n;
