@@ -2,13 +2,13 @@
 Использовать рекурсию.
 453 -> 12 45 -> 9*/
 
-int num = 5;
+int num = -99;
 
 int recurSum(int n) //in progress
 {
-    if (n < 10)
+    if (Math.Abs(n) < 10)
         return n;
-    n = n % 10;
-    return n + recurSum(n / 10);
+
+    return n % 10 + recurSum(n / 10);
 }
 Console.WriteLine($"Digits sum of {num} is {recurSum(num)}");
