@@ -14,13 +14,14 @@ Console.Write($"{recurNum(6,1)} ");*/
 //Method 2
 void recurNum(int num)
 {
-    if (num == 8)
-        Console.WriteLine($"{num}");
+    if (num == 0)
+        return;
     else
     {
-        Console.Write($"{num}, ");
-        recurNum(num + 1);
+        recurNum(num - 1);
+        Console.Write($"{num} ");
     }
 }
 Console.Write($"N = 8 -> ");
-recurNum(1);
+recurNum(8);
+Console.WriteLine();

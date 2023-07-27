@@ -3,9 +3,9 @@
 M = 1; N = 5 -> "2, 4"
 M = 4; N = 8 -> "4, 6, 8"*/
 
-int numberM = -19;
-int numberN = 32;
-bool numCheck(int m, int n)
+int numberM = -13;
+int numberN = 47;
+bool numCheck(int m, int n)//Возможно это и не нужно. Решил ввести проверку неравенства
 {
     if (m > n)
     {
@@ -16,17 +16,16 @@ bool numCheck(int m, int n)
 }
 void recurEven(int m, int n)
 {
-    if (m == n - 1 && n % 2 != 0 || m == n && n % 2 == 0)
-        Console.WriteLine($"{m}");
+    if (n == m - 1)
+        return;
     else
-    {
-        if (m % 2 == 0)
-            Console.Write($"{m}, ");
-        recurEven(m + 1, n);
-    }
+        recurEven(m, n - 1);//Переделал тут. Теперь вижу как набирается стэк. И сам принцип вывода(LIFO)
+    if (n % 2 == 0)
+        Console.Write($"{n} ");
 }
 if (numCheck(numberM, numberN))
 {
     Console.Write($"Even numbers between {numberM} and {numberN}: ");
     recurEven(numberM, numberN);
+    Console.WriteLine();
 }
