@@ -19,7 +19,7 @@ void recurEven(int m, int n)
     if (n == m - 1)
         return;
     else
-        recurEven(m, n - 1);//Переделал тут. Теперь вижу как набирается стэк. И сам принцип вывода(LIFO)
+        recurEven(m, n - 1);//Переделал тут. Теперь вижу - как набирается стэк. И сам принцип вывода(LIFO)
     if (n % 2 == 0)
         Console.Write($"{n} ");
 }
