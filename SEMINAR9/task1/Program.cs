@@ -15,12 +15,12 @@ Console.Write($"{recurNum(6,1)} ");*/
 void recurNum(int num)
 {
     if (num == 8)
-    {
         Console.WriteLine($"{num}");
-        return;
+    else
+    {
+        Console.Write($"{num}, ");
+        recurNum(num + 1);
     }
-    Console.Write($"{num}, ");
-    recurNum(num + 1);
 }
 Console.Write($"N = 8 -> ");
 recurNum(1);
