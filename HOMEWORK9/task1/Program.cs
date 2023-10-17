@@ -3,7 +3,7 @@
 M = 1; N = 5 -> "2, 4"
 M = 4; N = 8 -> "4, 6, 8"*/
 
-int numberM = -13;
+int numberM = 13;
 int numberN = 47;
 bool numCheck(int m, int n)//Возможно это и не нужно. Решил ввести проверку неравенства
 {
