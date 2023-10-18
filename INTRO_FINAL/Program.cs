@@ -8,6 +8,11 @@
         L = int.Parse(Console.ReadLine()!);
     }
     string[] arrstr = new string[L];
+    for (int i = 0; i < arrstr.Length; i++)
+    {
+     Console.Write($"Enter the value of the element {i+1}: ");
+     arrstr[i] = Console.ReadLine();   
+    }
     return arrstr;
 }
 void displayArr(string[]arr)
