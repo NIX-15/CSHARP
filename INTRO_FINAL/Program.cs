@@ -15,6 +15,37 @@
     }
     return arrstr;
 }
+string[] newArr(string[] oldArr)
+{
+    int s = oldArr.Length;
+    for (int i = 0; i < oldArr.Length; i++)
+    {
+        if (oldArr[i].Length > 3)
+            s--;
+    }
+    if (s == 0)
+    {
+        string[] newArr = new string[1];
+        //Console.WriteLine("There is not a single 'string' value in the original array whose length is at least 3");
+        newArr[0] = "No elements whose length is at least 3";
+        return newArr;
+    }
+    else
+    {
+        string[] newArr = new string[s];
+        s = 0;
+        for (int i = 0; i < oldArr.Length; i++)
+        {
+            if (oldArr[i].Length < 4)
+            {
+                newArr[s] = oldArr[i];
+                s++;
+            }
+        }
+        return newArr;
+    }
+
+}
 void displayArr(string[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
@@ -23,4 +54,5 @@ void displayArr(string[] arr)
     }
     Console.WriteLine();
 }
-displayArr(arrinit());
+//displayArr(arrinit());
+displayArr(newArr(arrinit()));
