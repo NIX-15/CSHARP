@@ -13,6 +13,11 @@
         Console.Write($"Enter the value of the element {i + 1}: ");
         arrstr[i] = Console.ReadLine()!;
     }
+    Console.Write("[ ");
+    for (int i = 0; i < arrstr.Length; i++)
+        Console.Write($" \"{arrstr[i]}\" ");
+    Console.Write(" ] -> ");
+
     return arrstr;
 }
 string[] newArr(string[] oldArr)
@@ -27,7 +32,7 @@ string[] newArr(string[] oldArr)
     {
         string[] newArr = new string[1];
         //Console.WriteLine("There is not a single 'string' value in the original array whose length is at least 3");
-        newArr[0] = "No elements whose length is at least 3";
+        newArr[0] = " No elements whose length is at least 3 ";
         return newArr;
     }
     else
@@ -46,13 +51,12 @@ string[] newArr(string[] oldArr)
     }
 
 }
-void displayArr(string[] arr)
+void displayArr(string[] newarr)
 {
-    for (int i = 0; i < arr.Length; i++)
-    {
-        Console.Write($"{arr[i]} ");
-    }
+    Console.Write("[ ");
+    for (int i = 0; i < newarr.Length; i++)
+        Console.Write($"\"{newarr[i]}\" ");
+    Console.Write("]");
     Console.WriteLine();
 }
-//displayArr(arrinit());
 displayArr(newArr(arrinit()));
