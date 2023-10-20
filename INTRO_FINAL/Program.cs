@@ -1,62 +1,60 @@
-﻿string[] arrinit()
+﻿Console.Write("Input the number L(Array Lenght): ");
+int L = int.Parse(Console.ReadLine()!);
+while (L < 1) //Можно еще написать bool метод на проверку
 {
-    Console.Write("Input the number L(Array Lenght): ");
-    int L = int.Parse(Console.ReadLine()!);
-    while (L < 1)
-    {
-        Console.Write("Error! Wrong Input! Input L again: ");
-        L = int.Parse(Console.ReadLine()!);
-    }
-    string[] arrstr = new string[L];
-    for (int i = 0; i < arrstr.Length; i++)
+    Console.Write("Error! Wrong Input! Input L again: ");
+    L = int.Parse(Console.ReadLine()!);
+}
+string[] arrOld = new string[L]; //Объявление исходного массива
+
+void fillArr(string[] arr)//Метод - наполение массива типа string
+{
+    for (int i = 0; i < arr.Length; i++)
     {
         Console.Write($"Enter the value of the element {i + 1}: ");
-        arrstr[i] = Console.ReadLine()!;
+        arr[i] = Console.ReadLine()!;
     }
-    Console.Write("[ ");
-    for (int i = 0; i < arrstr.Length; i++)
-        Console.Write($" \"{arrstr[i]}\" ");
-    Console.Write(" ] -> ");
-
-    return arrstr;
 }
-string[] newArr(string[] oldArr)
+
+string[] arrNew(string[] arrOld)//метод работающий с изначальным массивом, возвращает новый, по заданию
 {
-    int s = oldArr.Length;
-    for (int i = 0; i < oldArr.Length; i++)
+    int s = arrOld.Length;//кол-во строк нового массива. Можно не вводить, тогда в случае s=0, новый массив будет пустой
+    for (int i = 0; i < arrOld.Length; i++)
     {
-        if (oldArr[i].Length > 3)
+        if (arrOld[i].Length > 3)
             s--;
     }
     if (s == 0)
     {
-        string[] newArr = new string[1];
+        string[] arrNew = new string[1];
         //Console.WriteLine("There is not a single 'string' value in the original array whose length is at least 3");
-        newArr[0] = " No elements whose length is at least 3 ";
-        return newArr;
+        arrNew[0] = " No elements whose length is at least 3 ";
+        return arrNew;
     }
     else
     {
-        string[] newArr = new string[s];
-        s = 0;
-        for (int i = 0; i < oldArr.Length; i++)
+        string[] arrNew = new string[s];//выявили размер нового массива строк. 
+        s = 0;//использую ту же переменную счетчик для заполнения.
+        for (int i = 0; i < arrOld.Length; i++)
         {
-            if (oldArr[i].Length < 4)
+            if (arrOld[i].Length < 4)
             {
-                newArr[s] = oldArr[i];
+                arrNew[s] = arrOld[i];
                 s++;
             }
         }
-        return newArr;
+        return arrNew;
     }
-
 }
-void displayArr(string[] newarr)
+void displayArr(string[] arr)
 {
     Console.Write("[ ");
-    for (int i = 0; i < newarr.Length; i++)
-        Console.Write($"\"{newarr[i]}\" ");
+    for (int i = 0; i < arr.Length; i++)
+        Console.Write($"\"{arr[i]}\" ");
     Console.Write("]");
     Console.WriteLine();
 }
-displayArr(newArr(arrinit()));
+fillArr(arrOld);
+displayArr(arrOld);
+Console.WriteLine("Result: ");
+displayArr(arrNew(arrOld));
